@@ -46,7 +46,11 @@ testTarget(tgt, 'framework');
 In the code snippet above, a line with a function `createTarget()` which is commented out contains an argument string `'initialize'`. This argument will initialize all the features your reference target supports. Since my hardware will not have same features as the reference target, I did not initialize my new target with its reference target.
 
 If everything was setup right, the test function `testTarget()` will return PASSED. If something goes wrong and the test returns FAILED or INCOMPLETE, a link to the test diagnostic logs is shown below the test summary.
-
+<br/>
+<div align="right">
+    <b><a href="#----">↥ back to top</a></b>
+</div>
+<br/>
 ## Create a New Hardware from Reference Target
 
 
