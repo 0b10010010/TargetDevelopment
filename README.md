@@ -102,6 +102,18 @@ After you mapped your hardware to your target, you can check Simulink&copy;'s co
 
 ## Add a New Deployer
 
+Deployer is 
+
+This is where my code starts to get messy with build configuration values of the hardware. Start the process by creating a deployer object `dep` with the function `addNewDeployer(tgt, 'My New Deployer')`. Arguments are: target object to add your deployer to and the string name for your new deployer. Check your target by using the command `show(tgt)`. You should see 0 under the name of your hardware. This indicated the feature has not been mapped to your hardware. Map the feature by using `map(tgt, hw, dep)` and check your target again with `show(tgt)`. Now there should be 1 under your hardware name indicating the feature has been mapped.
+
+Below code snippet shows the process of adding a new deployer and its build configuration.
+> Pay attention to the propery values which contains the name of source files, location of directories, and etc.
+
+<br/>
+<div align="right">
+    <b><a href="#Target-Development">↥ back to top</a></b>
+</div>
+<br/>
 
 ## Current Issues
 
