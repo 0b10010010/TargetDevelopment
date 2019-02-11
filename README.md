@@ -15,7 +15,7 @@ Before getting started, basic information about what a target is and the impleme
 Also a Target SDK documentation that is specific to ARM&copy; Cortex-M&copy; processors can be found [here](https://www.mathworks.com/help/supportpkg/armcortexm/target-sdk.html "Develop a Target")
 <br/>
 <div align="right">
-    <b><a href="#----">↥ back to top</a></b>
+    <b><a href="#Target-Development">↥ back to top</a></b>
 </div>
 <br/>
 
