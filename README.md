@@ -17,7 +17,12 @@ To start developing a target with custom hardware boards based on STM32F4 Discov
 I (AK) started by loading a target from support packages provided by Mathworks to use as a
 reference to build my own target and its hardware.
 
-First, start by instantiating a reference target object by loading an already existing target by using a command `refTgt=loadTarget('STMicroelectronics STM32F4-Discovery')`. The string name 'STMicroelectronics STM32F4-Discovery' can be found in a xml file within SupportPackage directory: (C:/ProgramData/MATLAB/SupportPackages/R2018a/toolbox/target/supportpackages/stm32f4discovery/registry/parameters/STM32F4Discovery.xml)
+First, start by instantiating a reference target object by loading an already existing target by using a command `discCopy=loadTarget('STMicroelectronics STM32F4-Discovery')`. The string name 'STMicroelectronics STM32F4-Discovery' can be found in a xml file within SupportPackage directory: (C:/ProgramData/MATLAB/SupportPackages/R2018a/toolbox/target/supportpackages/stm32f4discovery/registry/parameters/STM32F4Discovery.xml) and is unique to MATLAB that cannot be duplicated.
+
+After creating a target object to use as a reference, instantiate another target object which will be the target I will be developing.
+Use the command `tgt=createTarget(myNewTargetName,referenceTargetName,myNewTargetRootFolder);`. Note that variable named referenceTargetName is not the same target as an object discCopy. Variable referenceTargetName is the base target which will support my new target and has a name 'ARM Cortex-M'. This string name is also a unique name which cannot be duplicated.
+Below code snipped shows the entire process of creating a new target.
+
 
 
 
