@@ -7,12 +7,17 @@ Develop a target using MATLAB&copy; target SDK for Cortex-M based hardware board
 **[Getting Started](#getting-started)**<br>
 **[Create the Framework](#create-the-framework)**<br>
 **[Create a New Hardware from Reference Target](#create-a-new-hardware-from-reference-target)**<br>
-**[Current Issues](#currentissues)**<br>
+**[Current Issues](#current-issues)**<br>
 
 ## Prerequisites
 
 Before getting started, basic information about what a target is and the implementation of it is explained in the following MathWorks&copy; [webpage](https://www.mathworks.com/help/supportpkg/armcortexm/ug/what-is-a-target.html "What Is a Target?").
 Also a Target SDK documentation that is specific to ARM&copy; Cortex-M&copy; processors can be found [here](https://www.mathworks.com/help/supportpkg/armcortexm/target-sdk.html "Develop a Target")
+<br/>
+<div align="right">
+    <b><a href="#----">↥ back to top</a></b>
+</div>
+<br/>
 
 ## Getting Started
 
