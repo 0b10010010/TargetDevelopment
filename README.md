@@ -21,6 +21,12 @@ Also a Target SDK documentation that is specific to ARM&copy; Cortex-M&copy; pro
 
 ## Getting Started
 
+<br/>
+<div align="right">
+    <b><a href="#Target-Development">↥ back to top</a></b>
+</div>
+<br/>
+
 ## Create the Framework
 
 To start developing a target with custom hardware boards based on STM32F4 Discovery Board,
@@ -48,21 +54,30 @@ In the code snippet above, a line with a function `createTarget()` which is comm
 If everything was setup right, the test function `testTarget()` will return PASSED. If something goes wrong and the test returns FAILED or INCOMPLETE, a link to the test diagnostic logs is shown below the test summary.
 <br/>
 <div align="right">
-    <b><a href="#----">↥ back to top</a></b>
+    <b><a href="#Target-Development">↥ back to top</a></b>
 </div>
 <br/>
+
 ## Create a New Hardware from Reference Target
 
-
-
-
-
+<br/>
+<div align="right">
+    <b><a href="#Target-Development">↥ back to top</a></b>
+</div>
+<br/>
 
 ## Current Issues
 
+<br/>
+<div align="right">
+    <b><a href="#Target-Development">↥ back to top</a></b>
+</div>
+<br/>
 
-
-
-
-
+## Readings to do
 https://dspace.vutbr.cz/bitstream/handle/11012/43045/eeict2015-470-otava.pdf?sequence=1&isAllowed=y
+<br/>
+<div align="right">
+    <b><a href="#Target-Development">↥ back to top</a></b>
+</div>
+<br/>
