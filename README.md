@@ -15,7 +15,7 @@ Before getting started, basic information about what a target is and the impleme
 
 To start developing a target with custom hardware boards based on STM32F4 Discovery Board,
 I (AK) started by loading a target from support packages provided by Mathworks to use as a
-reference to build my own target and its hardware.
+reference to build my own target and its hardware. Target SDK documentation that is specific to ARM&copy; Cortex-M&copy; processors can be found [here](https://www.mathworks.com/help/supportpkg/armcortexm/target-sdk.html "Develop a Target")
 
 First, start by instantiating a reference target object by loading an already existing target by using a command `discCopy=loadTarget('STMicroelectronics STM32F4-Discovery')`. The string name 'STMicroelectronics STM32F4-Discovery' can be found in a xml file within SupportPackage directory: (C:/ProgramData/MATLAB/SupportPackages/R2018a/toolbox/target/supportpackages/stm32f4discovery/registry/parameters/STM32F4Discovery.xml) and is unique to MATLAB that cannot be duplicated.
 
