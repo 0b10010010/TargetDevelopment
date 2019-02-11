@@ -51,7 +51,8 @@ testTarget(tgt, 'framework');
 ```
 In the code snippet above, a line with a function `createTarget()` which is commented out contains an argument string `'initialize'`. This argument will initialize all the features your reference target supports. Since my hardware will not have same features as the reference target, I did not initialize my new target with its reference target.
 
-If everything was setup right, the test function `testTarget()` will return PASSED. If something goes wrong and the test returns FAILED or INCOMPLETE, a link to the test diagnostic logs is shown below the test summary.
+If everything was setup right, the test function `testTarget(tgt, 'framework')` will return PASSED. If something goes wrong and the test returns FAILED or INCOMPLETE, a link to the test diagnostic logs is shown below the test summary.
+Note that passing a function `testTarget(tgt)` without the argument will test the entirety of the target which can take a while.
 <br/>
 <div align="right">
     <b><a href="#Target-Development">↥ back to top</a></b>
@@ -60,6 +61,30 @@ If everything was setup right, the test function `testTarget()` will return PASS
 
 ## Create a New Hardware from Reference Target
 
+Name of my hardware can be specified here after creating a target object that is being developed. The following code snipped contains creating a hardware:
+``` matlab
+%% Create a new hardware board from reference target
+hw = createHardware('My Disc Board');
+hw.DeviceID = 'ARM Cortex-M4F'; % a unique device ID
+map(tgt, hw, 'My Disc Board')
+show(tgt);
+refHw = getHardware(discCopy, 'mapped'); % get the reference hardware
+% hw.IOInterface = refHw{1,1}.IOInterface; % Using an object cause a bug
+
+io = addNewSerialInterface(hw,'My Serial');
+io.DefaultBaudrate = 460800;
+io.AvailableBaudrates = 'NaN';
+saveTarget(tgt);
+testTarget(tgt, 'hardware');
+
+% Check the Simulink Configuration to see my target is created
+```
+By calling a function `createHardware('Name of your Hardware')`, a new hardware can be created with the name you specified as a string. Once the hardware has been created, a DeviceID property can be set. String name `'ARM Cortex-M4F'` is also a unique value which cannot be different from what MATLAB recognizes.
+A function `map(tgt, hw, 'My Disc Board')` will map your new hardware to the target. You can have multiple hardware mapped to a single target and have different features mapped to each hardware. This will be covered in the following section.
+A variable `refHw` above in the code snippet is calling a function `getHardware(discCopy, 'mapped')` which creates a hardware object that is mapped to my loaded target object, `'discCopy'`. This function can be useful since you can see and use the object's property values.
+I used this variable to get property values `DeviceID` and `IOInterface`.
+Note that when using an object created with `getHardware()` function, there is a small bug present(R2018a) which does not populate your target object until MATLAB is restarted. IT would be much easier to set my target's properties values with the object created with the function but due to this bug I will copy its values one by one.
+Once the values have been set call the function `saveTarget(tgt)` to save your target and test your target with an argument `'hardware'`.
 <br/>
 <div align="right">
     <b><a href="#Target-Development">↥ back to top</a></b>
