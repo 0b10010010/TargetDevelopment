@@ -1,4 +1,4 @@
-# TargetDevelopment
+# Target Development
 
 Develop a target using MATLAB&copy; target SDK for Cortex-M based hardware board.
 
