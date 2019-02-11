@@ -38,7 +38,7 @@ First, start by instantiating a reference target object by loading an already ex
 After creating a target object to use as a reference, instantiate another target object which will be the target I will be developing.
 Use the command `tgt=createTarget(myNewTargetName,referenceTargetName,myNewTargetRootFolder);`.
 
-> Note: a variable named referenceTargetName is not the same target as an object discCopy. referenceTargetName variable is the base target which will support my new target and has a name 'ARM Cortex-M'. This string name is also a unique name which cannot be duplicated.
+> Note: a variable named referenceTargetName is not the same target as an object `discCopy`. `referenceTargetName` variable is the base target which will support my new target and has a name `'ARM Cortex-M'`. This string name is also a unique name which cannot be duplicated.
 
 Below code snippet shows the entire process of creating a new target framework.
 ``` matlab
@@ -52,7 +52,7 @@ tgt = createTarget(myNewTargetName,referenceTargetName,myNewTargetRootFolder);
 saveTarget(tgt); % saving the target will autogenerate files and direcotries
 testTarget(tgt, 'framework');
 ```
-In the code snippet above, a line with a function `createTarget()` which is commented out contains an argument string `'initialize'`. This argument will initialize all the features your reference target supports. Since my hardware will not have same features as the reference target, I did not initialize my new target with its reference target.
+In the code snippet above, a line with a function `createTarget(myNewTargetName,referenceTargetName,myNewTargetRootFolder, 'initialize')` which is commented out contains an argument string `'initialize'`. This argument will initialize all the features your reference target supports. Since my hardware will not have same features as the reference target, I did not initialize my new target with its reference target.
 
 If everything was setup right, the test function `testTarget(tgt, 'framework')` will return PASSED. If something goes wrong and the test returns FAILED or INCOMPLETE, a link to the test diagnostic logs is shown below the test summary.
 
@@ -87,7 +87,7 @@ By calling a function `createHardware('Name of your Hardware')`, a new hardware 
 
 A function `map(tgt, hw, 'My Disc Board')` will map your new hardware to the target. You can have multiple hardware mapped to a single target and have different features mapped to each hardware. This will be covered in the following section.
 
-A variable `refHw` above in the code snippet is calling a function `getHardware(discCopy, 'mapped')` which creates a hardware object that is mapped to my loaded target object, `'discCopy'`. This function can be useful since you can see and use the object's property values. I used this variable to get property values `DeviceID` and `IOInterface`. To add a new `IOInterface` property, use the function `addNewSerialInterface(harware, 'My Serial')`. `hardware` is your hardware object and `'My Serial'` is the name for your new interface. This string name is important when creating and mapping an External feature since you have to specify the unique name of the IO interface you created here.
+A variable `refHw` above in the code snippet is calling a function `getHardware(discCopy, 'mapped')` which creates a hardware object that is mapped to my loaded target object, `'discCopy'`. This function can be useful since you can see and use the object's property values. I used this variable to get property values `DeviceID` and `IOInterface` (i.e. using the command `refHw{1,1}.IOInterface`). To add a new `IOInterface` property, use the function `addNewSerialInterface(harware, 'My Serial')`. `hardware` is your hardware object and `'My Serial'` is the name for your new interface. This string name is important when creating and mapping an External feature since you have to specify the unique name of the IO interface you created here.
 
 > Note: when using an object created with `getHardware()` function, there is a small bug present(R2018a) which does not populate your target object's properties until MATLAB is restarted. It would be much easier to set my target's properties values with the created object but due to this bug I will copy its values one by one.
 
@@ -101,6 +101,7 @@ After you mapped your hardware to your target, you can check Simulink&copy;'s co
 <br/>
 
 ## Add a New Deployer
+
 
 ## Current Issues
 
