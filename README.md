@@ -4,9 +4,9 @@ Develop a target using MATLAB&copy; target SDK for Cortex-M based hardware board
 
 ### Table of Contents
 **[Prerequisites](#prerequisites)**<br>
-**[Getting Started](#gettingstarted)**<br>
-**[Create the Framework](#createtheframework)**<br>
-**[Create a New Hardware from Reference Target](#createanewhardwarefromreferencetarget)**<br>
+**[Getting Started](#getting-started)**<br>
+**[Create the Framework](#create-the-framework)**<br>
+**[Create a New Hardware from Reference Target](#create-a-new-hardware-from-reference-target)**<br>
 **[Current Issues](#currentissues)**<br>
 
 ## Prerequisites
