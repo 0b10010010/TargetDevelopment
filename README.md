@@ -5,6 +5,7 @@ Develop a target using MATLAB&copy; target SDK for Cortex-M based hardware board
 ### Table of Contents
 **[Prerequisites](#prerequisites)**<br>
 **[Getting Started](#gettingstarted)**<br>
+**[Create the Framework](#createtheframework)**<br>
 **[Current Issues](#currentissues)**<br>
 
 ## Prerequisites
@@ -13,6 +14,8 @@ Before getting started, basic information about what a target is and the impleme
 Also a Target SDK documentation that is specific to ARM&copy; Cortex-M&copy; processors can be found [here](https://www.mathworks.com/help/supportpkg/armcortexm/target-sdk.html "Develop a Target")
 
 ## Getting Started
+
+## Create the Framework
 
 To start developing a target with custom hardware boards based on STM32F4 Discovery Board,
 I (AK) started by loading a target from support packages provided by Mathworks to use as a
@@ -25,16 +28,18 @@ Use the command `tgt=createTarget(myNewTargetName,referenceTargetName,myNewTarge
 Below code snippet shows the entire process of creating a new target framework.
 ``` matlab
 %% Create a framework
-discCopy = loadTarget('STMicroelectronics STM32F4-Discovery'); % look at its field and copy below
-% referenceTargetName = 'STMicroelectronics STM32F4-Discovery';
+discCopy = loadTarget('STMicroelectronics STM32F4-Discovery'); % use this object to find specific attributes to reuse for my own target
 referenceTargetName = 'ARM Cortex-M';
-myNewTargetName = 'STM32F4-Discovery Copy 2';
-myNewTargetRootFolder = 'C:\temp\alexkim92\DiscCopy2'; % name of the new target's root folder
+myNewTargetName = 'STM32F4-Discovery Copy';
+myNewTargetRootFolder = 'C:\temp\alexkim92\DiscCopy'; % location of your new target
 tgt = createTarget(myNewTargetName,referenceTargetName,myNewTargetRootFolder);
 % tgt = createTarget(myNewTargetName,referenceTargetName,myNewTargetRootFolder, 'initialize');
-saveTarget(tgt);
+saveTarget(tgt); % saving the target will autogenerate files and direcotries
 testTarget(tgt, 'framework');
 ```
+In the code snippet above, a line with a function `createTarget()` which is commented out contains an argument string `'initialize'`. This argument will initialize all the features your reference target supports. Since my hardware will not have same features as the reference target, I did not initialize my new target with its reference target.
+
+
 
 
 
