@@ -152,7 +152,7 @@ saveTarget(tgt);
 testTarget(tgt, 'deployer'); % does not return PASSED yet
 ```
 After saving the target with its new feature properties set as above code, add all required source, header, and library files and folders into the <targetroot
-Add all required source, header, and library files and folders into the <myNewTargetRootFolder> specified in **[Create the Framework](#create-the-framework)**<br>
+Add all required source, header, and library files and folders into the `myNewTargetRootFolder` specified in **[Create the Framework](#create-the-framework)**<br>
 <br/>
 <div align="right">
     <b><a href="#Target-Development">↥ back to top</a></b>
