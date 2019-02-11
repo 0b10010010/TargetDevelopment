@@ -1,6 +1,6 @@
 # TargetDevelopment
 
-Develop a target using MATLAB's target SDK for Cortex-M based hardware board
+Develop a target using MATLAB&copy; target SDK for Cortex-M based hardware board.
 
 ### Table of Contents
 **[Prerequisites](#prerequisites)**<br>
@@ -9,7 +9,7 @@ Develop a target using MATLAB's target SDK for Cortex-M based hardware board
 
 ## Prerequisites
 
-asd
+Before getting started, basic information about what a target is and the implementation of it is explained in the following MathWorks&copy; [webpage](https://www.mathworks.com/help/supportpkg/armcortexm/ug/what-is-a-target.html "What Is a Target?")
 
 ## Getting Started
 
