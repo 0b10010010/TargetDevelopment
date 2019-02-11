@@ -16,6 +16,7 @@ Before getting started, basic information about what a target is and the impleme
 To start developing a target with custom hardware boards based on STM32F4 Discovery Board,
 I (AK) started by loading a target from support packages provided by Mathworks to use as a
 reference to build my own target and its hardware.
+
 First, start by loading a target by using a command
 
 ## Current Issues
