@@ -7,6 +7,7 @@ Develop a target using MATLAB&copy; target SDK for Cortex-M based hardware board
 **[Getting Started](#getting-started)**<br>
 **[Create the Framework](#create-the-framework)**<br>
 **[Create a New Hardware from Reference Target](#create-a-new-hardware-from-reference-target)**<br>
+**[Add a New Deployer](#add-a-new-deployer)**<br>
 **[Current Issues](#current-issues)**<br>
 **[Reading Materials](#reading-materials)**<br>
 **[To Do List](#to-do-list)**<br>
@@ -166,6 +167,7 @@ testTarget(tgt, 'deployer'); % does not return PASSED yet
 <br/>
 
 ## Reading Materials
+
 https://dspace.vutbr.cz/bitstream/handle/11012/43045/eeict2015-470-otava.pdf?sequence=1&isAllowed=y
 <br/>
 <div align="right">
@@ -178,3 +180,8 @@ https://dspace.vutbr.cz/bitstream/handle/11012/43045/eeict2015-470-otava.pdf?seq
 - [x] Create a target
 - [x] Add a new hardware to target
 - [ ] Pass the targetTest(tgt, 'deployer')
+<br/>
+<div align="right">
+    <b><a href="#Target-Development">↥ back to top</a></b>
+</div>
+<br/>
