@@ -70,7 +70,7 @@ hw.DeviceID = 'ARM Cortex-M4F'; % a unique device ID
 map(tgt, hw, 'My Disc Board')
 show(tgt);
 refHw = getHardware(discCopy, 'mapped'); % get the reference hardware
-% hw.IOInterface = refHw{1,1}.IOInterface; % Using an object cause a bug
+% hw.IOInterface = refHw{1,1}.IOInterface; % Using an object causes a bug
 
 io = addNewSerialInterface(hw,'My Serial');
 io.DefaultBaudrate = 460800;
@@ -84,7 +84,7 @@ By calling a function `createHardware('Name of your Hardware')`, a new hardware 
 
 A function `map(tgt, hw, 'My Disc Board')` will map your new hardware to the target. You can have multiple hardware mapped to a single target and have different features mapped to each hardware. This will be covered in the following section.
 
-A variable `refHw` above in the code snippet is calling a function `getHardware(discCopy, 'mapped')` which creates a hardware object that is mapped to my loaded target object, `'discCopy'`. This function can be useful since you can see and use the object's property values. I used this variable to get property values `DeviceID` and `IOInterface`.
+A variable `refHw` above in the code snippet is calling a function `getHardware(discCopy, 'mapped')` which creates a hardware object that is mapped to my loaded target object, `'discCopy'`. This function can be useful since you can see and use the object's property values. I used this variable to get property values `DeviceID` and `IOInterface`. To add a new `IOInterface` property, use the function `addNewSerialInterface(harware, 'My Serial')`. `hardware` is your hardware object and `'My Serial'` is the name for your new interface. This string name is important when creating and mapping an External feature since you have to specify the unique name of the IO interface you created here.
 Note: when using an object created with `getHardware()` function, there is a small bug present(R2018a) which does not populate your target object's properties until MATLAB is restarted. It would be much easier to set my target's properties values with the created object but due to this bug I will copy its values one by one.
 Once the values have been set call the function `saveTarget(tgt)` to save your target and test your target with `testTarget(tgt, 'hardware')` function.
 
