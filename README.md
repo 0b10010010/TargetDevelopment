@@ -87,6 +87,8 @@ A function `map(tgt, hw, 'My Disc Board')` will map your new hardware to the tar
 A variable `refHw` above in the code snippet is calling a function `getHardware(discCopy, 'mapped')` which creates a hardware object that is mapped to my loaded target object, `'discCopy'`. This function can be useful since you can see and use the object's property values. I used this variable to get property values `DeviceID` and `IOInterface`.
 Note: when using an object created with `getHardware()` function, there is a small bug present(R2018a) which does not populate your target object's properties until MATLAB is restarted. It would be much easier to set my target's properties values with the created object but due to this bug I will copy its values one by one.
 Once the values have been set call the function `saveTarget(tgt)` to save your target and test your target with `testTarget(tgt, 'hardware')` function.
+
+After you mapped your hardware to your target, you can check Simulink&copy;'s configuration panel to see that your hardware is present in drop down menu. To check this, create a new Simulink model and select **Simulation > Model Configuration Parameters**. In the Configuration Parameter dialog box, select **Hardware Implementation**. In the drop down menu of **Hardware Board**, you should see your new hardware available.
 <br/>
 <div align="right">
     <b><a href="#Target-Development">↥ back to top</a></b>
