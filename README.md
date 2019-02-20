@@ -219,6 +219,7 @@ https://dspace.vutbr.cz/bitstream/handle/11012/43045/eeict2015-470-otava.pdf?seq
 - [x] Create a target
 - [x] Add a new hardware to target
 - [ ] Pass the targetTest(tgt, 'deployer')
+- [x] Pass the workaround targetTest(tgt, 'deployer')
 <br/>
 <div align="right">
     <b><a href="#Target-Development">↥ back to top</a></b>
