@@ -176,18 +176,18 @@ Within the file:
 ```matlab
 function config =loc_createPILConfig
 config(1) = rtw.connectivity.ConfigRegistry;
-config(1).ConfigName = 'STM32F4-Discovery Copy (ST-LINK)';
+config(1).ConfigName = 'STM32F4-Discovery Copy (ST-LINK)';                               % added 'Copy' at the end
 config(1).ConfigClass = 'codertarget.stm32f4discoverycopy.pil.ConnectivityConfig';
 config(1).isConfigSetCompatibleFcn = @i_isConfigSetCompatible;
 config(2) = rtw.connectivity.ConfigRegistry;
-config(2).ConfigName = 'STM32F4-Discovery Copy (Serial)';
-config(2).ConfigClass = 'codertarget.stm32f4discoverycopy.pil.SerialConnectivityConfig';
+config(2).ConfigName = 'STM32F4-Discovery Copy (Serial)';                                % added 'Copy' at the end
+config(2).ConfigClass = 'codertarget.stm32f4discoverycopy.pil.SerialConnectivityConfig'; % added 'copy' after `stm32f4discovery`
 config(2).isConfigSetCompatibleFcn = @i_isConfigSetCompatibleSerial;
 end
  
 % -------------------------------------------------------------------------
 function boardInfo =loc_registerBoardsForThisTarget
-target = 'STMicroelectronics STM32F4-Discovery Copy';
+target = 'STMicroelectronics STM32F4-Discovery Copy';                                    % added 'Copy' at the end
 [targetFolder, ~, ~] = fileparts(mfilename('fullpath'));
 boardFolder = codertarget.target.getTargetHardwareRegistryFolder(targetFolder);
 boardInfo = codertarget.target.getTargetHardwareInfo(targetFolder, boardFolder, target);
@@ -195,8 +195,8 @@ end
  
 % -------------------------------------------------------------------------
 function ret =loc_registerThisTarget
-ret.Name = 'STMicroelectronics STM32F4-Discovery Copy';
-ret.ShortName = 'stmicroelectronicsstm32f4discoverycopy';
+ret.Name = 'STMicroelectronics STM32F4-Discovery Copy';                                  % added 'Copy' at the end
+ret.ShortName = 'stmicroelectronicsstm32f4discoverycopy';                                % added 'copy' after `stm32f4discovery`
 [targetFilePath, ~, ~] = fileparts(mfilename('fullpath'));
 ret.TargetFolder = targetFilePath;
 ret.ReferenceTargets = { 'ARM Cortex-M' };
