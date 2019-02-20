@@ -167,6 +167,13 @@ Add all required source, header, and library files and folders into the `myNewTa
 </div>
 <br/>
 
+## Workaround
+
+Due to a limited documentation on the issue I had where my target did not pass the deployer test even though I had the exact same values
+from its reference target: some xml files did not create or some fileds within the xml file were missing when compared to the reference target. So instead I copied the entire reference target folder `stm32f4discovery` and created a copy with a name `stm32f4discoveryCopy`.
+Once the directory was replicated, I compared xml files to make sure my copy did not have the same string names as the original target since they need to be unique names. The following file has been modified: `rtwTargetInfo.m`.
+
+
 ## Reading Materials
 
 https://dspace.vutbr.cz/bitstream/handle/11012/43045/eeict2015-470-otava.pdf?sequence=1&isAllowed=y
