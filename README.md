@@ -219,13 +219,20 @@ Once the above fields have been modified I was able to run the deployer test and
 
 To create Simulink blocks following template files were used: [Source.m](Source.m) and [Sink.m](Sink.m).
 Once the files have been saved let's start with the Source.m file to create a source block. Change the name of the file
-to its purpose (e.g. PBRead.m) and save it to a directory where include and source directories will be. When the file name is changed, name of the classdef has to change to match the file name. For PBRead.m file,
+to its purpose (e.g. PBRead.m) and save it to a directory where include and source directories will be. When the file name is changed, name of the classdef has to change to match the file name. For PBRead.m file:
 ```matlab
 classdef PBRead < realtime.internal.SourceSampleTime ... % Inherits from matlab.System
         & coder.ExternalDependency ...
         & matlab.system.mixin.Propagates ...
         & matlab.system.mixin.CustomIcon
 ```
+Once the names are changed next line to modify is on lines 45 and 46. These lines includes the header file and its function:
+```matlab
+% Call C-function implementing device initialization
+coder.cinclude('stm32f4disc_gpio_wrapper.h');
+coder.ceval('Disc_GPIO_ReadBit_Init');
+```
+`stm32f4disc_gpio_wrapper.h` can be found [here](stm32f4disc_gpio_wrapper.h)
 
 <br/>
 <div align="right">
