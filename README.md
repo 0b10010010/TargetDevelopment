@@ -226,13 +226,16 @@ classdef PBRead < realtime.internal.SourceSampleTime ... % Inherits from matlab.
         & matlab.system.mixin.Propagates ...
         & matlab.system.mixin.CustomIcon
 ```
+Also on line 108, change the name of the icon: `icon = 'PBRead';` and on line 124: `name = 'PBRead';`
+Note that this does not have to be identical to the file name.
+
 Once the names are changed next line to modify is on lines 45 and 46. These lines include the header file and its init function:
 ```matlab
 % Call C-function implementing device initialization
 coder.cinclude('stm32f4disc_gpio_wrapper.h');
 coder.ceval('Disc_GPIO_ReadBit_Init');
 ```
-`stm32f4disc_gpio_wrapper.h` can be found [here](source/include/stm32f4disc_gpio_wrapper.h)
+`stm32f4disc_gpio_wrapper.h` can be found [here](source/include/stm32f4disc_gpio_wrapper.h).<br>
 After that, on line 56:
 ```matlab
 % Call C-function implementing device output
