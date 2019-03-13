@@ -10,6 +10,7 @@ Develop a target using MATLAB&copy; target SDK for Cortex-M based hardware board
 **[Add a New Deployer](#add-a-new-deployer)**<br>
 **[Current Issues](#current-issues)**<br>
 ~~**[Workaround](#workaround)**<br>~~
+**[MATLAB System Function Block](#matlab-system-function-block)**<br>
 **[Reading Materials](#reading-materials)**<br>
 **[To Do List](#to-do-list)**<br>
 
@@ -207,6 +208,16 @@ end
 Add `\stm32f4discoveryCopy` and `\stm32f4discoveryCopy\registry` to the path and run the command `sl_refresh_customizations`.
 
 Once the above fields have been modified I was able to run the deployer test and pass.
+
+<br/>
+<div align="right">
+    <b><a href="#Target-Development">↥ back to top</a></b>
+</div>
+<br/>
+
+## MATLAB System Function Block
+
+To create Simulink blocks following template files were used: Source.m and Sink.m.
 
 <br/>
 <div align="right">
