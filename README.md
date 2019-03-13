@@ -226,13 +226,19 @@ classdef PBRead < realtime.internal.SourceSampleTime ... % Inherits from matlab.
         & matlab.system.mixin.Propagates ...
         & matlab.system.mixin.CustomIcon
 ```
-Once the names are changed next line to modify is on lines 45 and 46. These lines includes the header file and its function:
+Once the names are changed next line to modify is on lines 45 and 46. These lines include the header file and its init function:
 ```matlab
 % Call C-function implementing device initialization
 coder.cinclude('stm32f4disc_gpio_wrapper.h');
 coder.ceval('Disc_GPIO_ReadBit_Init');
 ```
 `stm32f4disc_gpio_wrapper.h` can be found [here](source/include/stm32f4disc_gpio_wrapper.h)
+After that, on line 56:
+```matlab
+% Call C-function implementing device output
+y = coder.ceval('Disc_GPIO_ReadBit');
+```
+
 
 <br/>
 <div align="right">
