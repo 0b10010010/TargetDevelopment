@@ -235,12 +235,14 @@ Once the names are changed next line to modify is on lines 45 and 46. These line
 coder.cinclude('stm32f4disc_gpio_wrapper.h');
 coder.ceval('Disc_GPIO_ReadBit_Init');
 ```
+
 `stm32f4disc_gpio_wrapper.h` can be found [here](source/include/stm32f4disc_gpio_wrapper.h).<br>
 After that on line 56:
 ```matlab
 % Call C-function implementing device output
 y = coder.ceval('Disc_GPIO_ReadBit');
 ```
+
 Finally, from line 135:
 ```matlab
 % Update buildInfo
@@ -256,8 +258,8 @@ addSourceFiles(buildInfo,'stm32f4xx_gpio.c', srcDir);
 addSourceFiles(buildInfo,'stm32f4xx_rcc.c', srcDir);
 addSourceFiles(buildInfo,'stm32f4disc_gpio_wrapper.c',srcDir);
 ```
-Above code block will add the correct path to directories and all the files necessary to implement the system block to turn on and off LED's on Discovery board using STM32f407. Make sure to have corresponding files in respective folders.
 
+Above code block will add the correct path to directories and all the files necessary to implement the system block to turn on and off LED's on Discovery board using STM32f407. Make sure to have corresponding files in respective folders.
 >Note: One thing I found was that when either Sink.m or Source.m file contains the path to all the files, the other file did not need to contain the above code block. Simulink was still able to autogenerate codes.
 
 Sink.m can be changed similar to above modifications to Source.m. Name of classdef has to match the file name (e.g. LEDWrite).
@@ -271,6 +273,7 @@ coder.ceval('Disc_GPIO_Led_Init');            % output function init
 % Call C-function implementing device output
 coder.ceval('Disc_GPIO_WriteBit', u);         % on line 54
 ```
+
 And also the following on line 105 and 121:
 ```matlab
 icon = 'LEDWrite';  % on line 105
