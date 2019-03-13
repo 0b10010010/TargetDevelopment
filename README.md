@@ -9,7 +9,7 @@ Develop a target using MATLAB&copy; target SDK for Cortex-M based hardware board
 **[Create a New Hardware from Reference Target](#create-a-new-hardware-from-reference-target)**<br>
 **[Add a New Deployer](#add-a-new-deployer)**<br>
 **[Current Issues](#current-issues)**<br>
-**[Workaround](#workaround)**<br>
+~~**[Workaround](#workaround)**<br>~~
 **[Reading Materials](#reading-materials)**<br>
 **[To Do List](#to-do-list)**<br>
 
