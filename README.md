@@ -217,7 +217,15 @@ Once the above fields have been modified I was able to run the deployer test and
 
 ## MATLAB System Function Block
 
-To create Simulink blocks following template files were used: Source.m and Sink.m.
+To create Simulink blocks following template files were used: [Source.m](Source.m) and [Sink.m](Sink.m).
+Once the files have been saved let's start with the Source.m file to create a source block. Change the name of the file
+to its purpose (e.g. PBRead.m) and save it to a directory where include and source directories will be. When the file name is changed, name of the classdef has to change to match the file name. For PBRead.m file,
+```matlab
+classdef PBRead < realtime.internal.SourceSampleTime ... % Inherits from matlab.System
+        & coder.ExternalDependency ...
+        & matlab.system.mixin.Propagates ...
+        & matlab.system.mixin.CustomIcon
+```
 
 <br/>
 <div align="right">
