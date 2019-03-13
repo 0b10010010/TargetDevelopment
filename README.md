@@ -232,7 +232,7 @@ Once the names are changed next line to modify is on lines 45 and 46. These line
 coder.cinclude('stm32f4disc_gpio_wrapper.h');
 coder.ceval('Disc_GPIO_ReadBit_Init');
 ```
-`stm32f4disc_gpio_wrapper.h` can be found [here](stm32f4disc_gpio_wrapper.h)
+`stm32f4disc_gpio_wrapper.h` can be found [here](include/source/stm32f4disc_gpio_wrapper.h)
 
 <br/>
 <div align="right">
